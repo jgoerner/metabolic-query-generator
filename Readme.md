@@ -2,10 +2,10 @@
 <br />
 <p align="center">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  <h3 align="center">Query Generator</h3>
+  <h3 align="center">Metabolic Query Generator</h3>
 
   <p align="center">
-    Exam Preparation Queries - Metabolic Pathways 
+    Human biology is tough 🤯- but learning about it isn't anymore 🥳 
     <br />
     <br />
     <a href="">View Demo</a>
@@ -40,8 +40,6 @@
 <p align="center">
           <img src="images/about.png">
 </p>
-
-> Human biology is tough 🤯- but learning about it isn't anymore 🥳
 
 This repository **helps people** who like to intensify their **knowledge about the human metabolic pathways**.
 The main idea is to encode a variety of those pathways in a graph database, which can be used to **automatically generate questions** which might be used for **exam preparation**.
