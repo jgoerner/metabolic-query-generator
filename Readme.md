@@ -50,17 +50,25 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 ### Built With
 
 🚧 under construction 🚧
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Neo4j](https://neo4j.com/)
+- [Postgres](https://www.postgresql.org/)
+- [Bulma](https://bulma.io/)
+- Coffee ☕️ & Love ❤️
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
 
-🚧 under construction 🚧
+- [Docker](https://www.docker.com/)
+- [Java 8+](https://aws.amazon.com/corretto/)
 
 ### Installation
 
-🚧 under construction 🚧
+1. Ramp up the infrastructure via `docker-compose up -d`
+2. Launch the application via `./gradlew bootRun`
+3. Open a web browser at `http://localhost:8080/index.html`
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -79,8 +87,8 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 
 🤖❓Generated Question Types:
 
-- [ ] What does the abbreviation "FBP" stand for?
-- [ ] What is the abbreviation for Fructose bisphosphate?
+- [x] What does the abbreviation "FBP" stand for?
+- [x] What is the abbreviation for Fructose bisphosphate?
 - [ ] Which enzymes are part of the glycolysis?
 - [ ] Which enzyme is responsible for the transormation from glucose to glucose-6-phosphate?
 - [ ] What is the process to transform glucose into fructose 1,6 biphosphate?
