@@ -75,10 +75,30 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 ### 👾 CLI Usage
 
 #### Abbreviation ➡️ Name (`a2n`)
-`curl http://localhost:8080/questions/random?type=a2n` 
+Query:<br>
+`curl http://localhost:8080/questions/random?type=a2n`<br><br>
+Result:<br>
+```
+{
+   "created" : "2020-03-15T22:39:12.489473",
+   "question" : "What does 'PFK' stand for?",
+   "qid" : "620ea062-4f0e-47b5-86a6-68990e9cfe67",
+   "answer" : "Phosphofructokinase"
+}
+```
 
 #### Name ➡️ Abbreviation (`n2a`)
-`curl http://localhost:8080/questions/random?type=n2a` 
+Question:<br>
+`curl http://localhost:8080/questions/random?type=n2a` <br><br>
+Result:<br>
+```
+{
+   "answer" : "GAP-DH",
+   "question" : "What is the abbreviation for 'Glycerinaldehyd-3-phosphat-Dehydrogenase'?",
+   "qid" : "bc8d2301-cacf-400b-8111-302af4273d74",
+   "created" : "2020-03-15T22:40:27.306076"
+}
+```
 
 ### 📱 Front End Usage
 🚧 under construction 🚧
