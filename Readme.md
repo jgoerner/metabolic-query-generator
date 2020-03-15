@@ -49,7 +49,6 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 
 ### Built With
 
-🚧 under construction 🚧
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Neo4j](https://neo4j.com/)
 - [Postgres](https://www.postgresql.org/)
@@ -73,7 +72,17 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### 👾 CLI Usage
+
+#### Abbreviation ➡️ Name (`a2n`)
+`curl http://localhost:8080/questions/random?type=a2n` 
+
+#### Name ➡️ Abbreviation (`n2a`)
+`curl http://localhost:8080/questions/random?type=n2a` 
+
+### 📱 Front End Usage
 🚧 under construction 🚧
+
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -98,6 +107,12 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 - [ ] What reactions of the glycolysis are reversible?
 - [ ] What is the purpose of the Cori cycle?
 - [ ] ...
+
+🛠🎛 Admin Features:
+- [x] Question Logging
+- [x] Answer Logging
+- [ ] Multitenancy
+- [ ] (Learn) Progress Tracker
 
 Further pathways and/or question types can be added by [raising an issue](https://github.com/jgoerner/query-generator/issues). 
 
