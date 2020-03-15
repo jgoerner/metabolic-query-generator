@@ -19,4 +19,5 @@ public class Question {
                 .qid(UUID.randomUUID().toString())
                 .created(LocalDateTime.now());
     }
+
 }
