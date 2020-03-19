@@ -22,11 +22,14 @@ public class CandidatePort implements FindAbbreviationToNameCandidatePort, FindN
     @Value("${spring.data.neo4j.password}")
     private String password;
 
+    @Value("${spring.data.neo4j.uri}")
+    private String uri;
+
     private  Driver driver;
 
     @PostConstruct
     void init() {
-        driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic(this.username, this.password));
+        driver = GraphDatabase.driver(uri, AuthTokens.basic(this.username, this.password));
     }
 
     @Override
