@@ -76,7 +76,7 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 
 #### Abbreviation ➡️ Name (`a2n`)
 Query:<br>
-`curl http://localhost:8080/questions/random?type=a2n`<br><br>
+`curl http://localhost:8080/api/v1/questions/random?type=a2n`<br><br>
 Result:<br>
 ```
 {
@@ -89,7 +89,7 @@ Result:<br>
 
 #### Name ➡️ Abbreviation (`n2a`)
 Question:<br>
-`curl http://localhost:8080/questions/random?type=n2a` <br><br>
+`curl http://localhost:8080/api/v1/questions/random?type=n2a` <br><br>
 Result:<br>
 ```
 {
