@@ -10,8 +10,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class WebController {
+public class RestApi {
 
     private final AbbreviationToNameUseCase abbreviationToNameUseCase;
     private final NameToAbbreviationUseCase nameToAbbreviationUseCase;

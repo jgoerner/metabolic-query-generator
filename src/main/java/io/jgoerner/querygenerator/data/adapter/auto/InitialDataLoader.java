@@ -31,6 +31,7 @@ public class InitialDataLoader implements CommandLineRunner {
                 "2-Phosphoglycerat", "2-PG",
                 "Phosphoenolpyruvat", "PEP"
         ).forEach(newEnzymeUseCase::create);
+        log.info("Injected Enzymes");
 
         // Intermediates
         Map.of(
@@ -45,5 +46,7 @@ public class InitialDataLoader implements CommandLineRunner {
                 "1,3-Biphosphoglycerat", "1,3-BPG",
                 "3-Phosphoglycerat", "3-PG"
         ).forEach(newIntermediateUseCase::create);
+        log.info("Injected Intermediates");
+
     }
 }

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/0dd18acf52.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+    <title>Hello, world!</title>
+</head>
+<body onload="init()">
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="card">
+                <div class="card-content">
+                    <div class="tabs is-centered is-toggle">
+                        <ul>
+                            <li id="li-question" class="is-active">
+                                <a>
+                                    <span class="icon is-small"><i class="fas fa-question"
+                                                                   aria-hidden="true"></i></span>
+                                    <span>Frage</span>
+                                </a>
+                            </li>
+                            <li id="li-answer">
+                                <a>
+                                    <span class="icon is-small"><i class="fab fa-earlybirds"
+                                                                   aria-hidden="true"></i></span>
+                                    <span>Antwort</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="content" id="content"></div>
+                    <div class="buttons is-centered">
+                        <button class="button is-success is-outlined" id="btn-check">
+            <span class="icon is-small">
+              <i class="fas fa-check"></i>
+            </span>
+                        </button>
+                        <button class="button is-danger is-outlined" id="btn-danger">
+            <span class="icon is-small">
+              <i class="fas fa-times-circle"></i>
+            </span>
+                        </button>
+                        <button class="button" id="btn-next" disabled>
+            <span class="icon is-small">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    // variable //
+    let status = "";
+
+    // references
+    const content = document.getElementById("content");
+    const liQuestion = document.getElementById("li-question");
+    const liAnswer = document.getElementById("li-answer");
+    const btnCheck = document.getElementById("btn-check");
+    const btnDanger = document.getElementById("btn-danger");
+    const btnNext = document.getElementById("btn-next");
+
+    let data = {
+        question: "",
+        answer: "",
+        qid: ""
+    };
+
+    function updateData(d) {
+        data = d;
+        content.innerText = data.question;
+    }
+
+    function resetUI() {
+        btnCheck.classList.add("is-outlined");
+        btnDanger.classList.add("is-outlined");
+        btnNext.setAttribute("disabled", "");
+        liQuestion.classList.add("is-active");
+        liAnswer.classList.remove("is-active");
+        status = "";
+    }
+
+    function submit() {
+        answerQuery();
+        fetchQuestion();
+        resetUI();
+    }
+
+    function init() {
+        fetchQuestion();
+    }
+
+    function answerQuery() {
+        fetch(`/api/v1/questions/${data.qid}/answer?result=${status}`, {method: "POST"})
+            .then(function (r) {
+                return r.json();
+            })
+            .then(function (d) {
+                console.log("ANSWER", d);
+            })
+            .catch(function (err) {
+                console.log("ERROR", err);
+            });
+    }
+
+    function fetchQuestion() {
+        fetch("/api/v1/questions/random?type=a2n")
+            .then(function (r) {
+                return r.json();
+            }).then(function (d) {
+            updateData(d);
+            resetUI();
+        })
+            .catch(function (err) {
+                console.log("ERROR", err);
+            });
+    }
+
+    // handler //
+    liQuestion.onclick = function () {
+        liQuestion.classList.add("is-active");
+        liAnswer.classList.remove("is-active");
+        content.innerText = data.question;
+    };
+    liAnswer.onclick = function () {
+        liAnswer.classList.add("is-active");
+        liQuestion.classList.remove("is-active");
+        content.innerText = data.answer;
+    };
+    btnCheck.onclick = function () {
+        btnCheck.classList.remove("is-outlined");
+        btnDanger.classList.add("is-outlined");
+        btnNext.removeAttribute("disabled");
+        status = "ok";
+    };
+    btnDanger.onclick = function () {
+        btnDanger.classList.remove("is-outlined");
+        btnCheck.classList.add("is-outlined");
+        btnNext.removeAttribute("disabled");
+        status = "wrong";
+    };
+    btnNext.onclick = function () {
+        submit();
+    }
+
+</script>
+</body>
+</html>

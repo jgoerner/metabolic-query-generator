@@ -4,18 +4,29 @@ import io.jgoerner.querygenerator.questions.application.port.out.FindAbbreviatio
 import io.jgoerner.querygenerator.questions.application.port.out.FindNameToAbbreviationCandidatePort;
 import io.jgoerner.querygenerator.questions.domain.Candidate;
 import lombok.extern.log4j.Log4j2;
+import org.neo4j.driver.AuthTokens;
 import org.neo4j.driver.Driver;
 import org.neo4j.driver.GraphDatabase;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 @Component
 @Log4j2
 public class CandidatePort implements FindAbbreviationToNameCandidatePort, FindNameToAbbreviationCandidatePort {
 
-    private final Driver driver;
+    @Value("${spring.data.neo4j.username}")
+    private String username;
 
-    public CandidatePort() {
-        this.driver = GraphDatabase.driver("bolt://localhost:7687");
+    @Value("${spring.data.neo4j.password}")
+    private String password;
+
+    private  Driver driver;
+
+    @PostConstruct
+    void init() {
+        driver = GraphDatabase.driver("bolt://localhost:7687", AuthTokens.basic(this.username, this.password));
     }
 
     @Override
