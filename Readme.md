@@ -8,11 +8,11 @@
     Human biology is tough 🤯- but learning about it isn't anymore 🥳 
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://metabolic-query-generator.herokuapp.com/">View Demo</a>
     ·
-    <a href="">Report Bug</a>
+    <a href="https://github.com/jgoerner/metabolic-query-generator/issues/new">Report Bug</a>
     ·
-    <a href="">Request Feature</a>
+    <a href="https://github.com/jgoerner/metabolic-query-generator/issues/new">Request Feature</a>
   </p>
 </p>
 
