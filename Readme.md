@@ -38,7 +38,7 @@
 ## About The Project
 
 <p align="center">
-          <img src="images/about.png">
+          <img src="images/app.png" width="500">
 </p>
 
 This repository **helps people** who like to intensify their **knowledge about the human metabolic pathways**.
@@ -47,12 +47,14 @@ The main idea is to encode a variety of those pathways in a graph database, whic
 DISCLAIMER: As I did not study anything biology related, I can't ensure that all information is encoded correctly.
 Therefore I highly encourage all attentive readers to [open an issue](https://github.com/jgoerner/query-generator/issues) whenever information shall be adjusted, in order to keep the knowledge as correct as possible. 
 
-### Built With
+### Built & Hosted With
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Neo4j](https://neo4j.com/)
 - [Postgres](https://www.postgresql.org/)
 - [Bulma](https://bulma.io/)
+- [Heroku](https://www.heroku.com) 
+- [Digital Ocean](www.digitalocean.com)
 - Coffee ☕️ & Love ❤️
 
 <!-- GETTING STARTED -->
@@ -71,6 +73,11 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+### 🤹‍♀️ Live Demo
+A live demo is available [here](https://metabolic-query-generator.herokuapp.com/) (as it is hosted on a [free Heroku Dyno](https://devcenter.heroku.com/articles/free-dyno-hours) it might have been put to sleep automatically - give it a few seconds to reboot once you hit the page).
+
+
 
 ### 👾 CLI Usage
 
