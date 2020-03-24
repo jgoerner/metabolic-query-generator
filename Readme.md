@@ -65,8 +65,21 @@ Therefore I highly encourage all attentive readers to [open an issue](https://gi
 - [Docker](https://www.docker.com/)
 - [Java 8+](https://aws.amazon.com/corretto/)
 
+### Environment Variables
+
+Before you can ramp up the stack, you need to export the following environment variables, which are used in the [application.properties](./src/main/resources/application.properties) as well as the [docker-compose.yml](./docker-compose.yml) file.
+
+| Name | Description | Example |
+| --- | --- | --- |
+| POSTGRES_USER | Postgres Username | `postgres`
+| POSTGRES_PASSWORD | Password of the POSTGRES_USER | `postgres-is-my-favourite-db`
+| POSTGRES_URL | Spring Data URL of the Postgres | `jdbc:postgresql://<host>:<port>/<schema>`
+| NEO_USER | Neo4j User | `neo4j` 
+| NEO_PASSWORD | Password of the NEO_USER | `neo4j-is-my-favourite-db`
+
 ### Installation
 
+0. Export the required [environment variables](#environment-variables)
 1. Ramp up the infrastructure via `docker-compose up -d`
 2. Launch the application via `./gradlew bootRun`
 3. Open a web browser at `http://localhost:8080/index.html`
