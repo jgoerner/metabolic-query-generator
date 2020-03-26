@@ -76,6 +76,7 @@ Before you can ramp up the stack, you need to export the following environment v
 | POSTGRES_URL | Spring Data URL of the Postgres | `jdbc:postgresql://<host>:<port>/<schema>`
 | NEO_USER | Neo4j User | `neo4j` 
 | NEO_PASSWORD | Password of the NEO_USER | `neo4j-is-my-favourite-db`
+| NEO_URI | URI of the Neo4j instance | `bolt://<host>:<port>`
 
 ### Installation
 
